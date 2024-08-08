@@ -1,0 +1,95 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+    }
+    body
+    {
+      padding: 20px;
+      min-height: 100vh;
+      background: #f0f0f0;
+    }
+    
+    .container
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .container .card
+    {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      background: rgba(45,45,45,1);
+      border-radius: 20px;
+      overflow:hidden;
+      margin: 10px;
+    }
+    
+    .container .card::before
+    {
+      content:'';
+      position: absolute;
+      background: radial-gradient(var(--clr), transparent,transparent);
+      width: 300px;
+      height: 300px;
+      top:var(--y);
+      left:var(--x);
+      transform:translate(-50%,-50%);
+      opacity: 0;
+      transition: 0.5s, top 0s,left 0s;
+    }
+    .container .card:hover::before{
+        opacity: 1;
+    }
+    .container .card::after
+    {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 18px;
+    background: rgba(45,45,45,0.75);
+    }
+    .container .win10btn
+    {
+      position: relative;
+      width: 190px;
+      height: 50px;
+      outline: none;
+      border: none;
+      background: #fff;
+      border-radius: 5px;
+      overflow:hidden;
+      margin: 10px;
+    }
+    .container .win10btn::before
+    {
+      content:'';
+      position: absolute;
+      background: radial-gradient(silver, transparent,transparent);
+      width: 250px;
+      height: 100px;
+      top:var(--y);
+      left:var(--x);
+      transform:translate(-50%,-50%);
+      opacity: 0;
+      transition: 0.5s, top 0s,left 0s;
+    }
+    .container .win10btn:hover::before{
+        opacity: 1;
+    }
+    .container .win10btn::after
+    {
+    content: ' Here Is Win 10 Btn';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 2px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    }
