@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PE:wght@100..400&family=Sen:wght@400..800&display=swap');
+:root{
+    --primary-font: "Sen", sans-serif;;
+    --secondary-font: "Cardo", serif;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  justify-content:start;
+  align-items:center;
+  align-content:center;
+  height:100vh;
+  background:lightgray;
+  font-family:var(--primary-font);
+}
+.card{
+  background:#fff;
+  padding:5px;
+  overflow:hidden;
+  position:relative;
+  height:400px;
+  width:300px;
+  border-radius:20px;
+  opacity:0.9;
+  transition:.3s;
+}
+.card svg{
+  filter:grayscale(1);
+}
+
+.cover-image{
+  height:350px;
+  width:100%;
+  position:relative;
+  border-radius:15px;
+  overflow:hidden;
+  opacity:0.85;
+  transition: 1.5s;
+}
+
+.main-image{
+   width:300px;
+   height:300px;
+   position:absolute;
+   z-index:3;
+   top:0%;
+   left:0%;
+   scale:0.8;
+   transition:.5s;
+}
+
+.heading{
+  font-family:var(--secondary-font);
+  font-size:30px;
+  text-align:center;
+  font-weight:550;
+  margin-top:10px;
+  transition:.6s;
+  position:absolute;
+  width:100%;
+  bottom:0;
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.CartBtn {
+  width: 130px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  border:1px solid gray;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(17, 17, 17);
+  z-index: 1;
+  transition-duration: .5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+  transition-duration: .5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px,0px);
+  transition-duration: .5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: .5s;
+}
+
+.content{
+  display:flex;
+  gap:10px;
+  justify-content:space-evenly;
+  flex-wrap:wrap;
+  position:absolute;
+  width:100%;
+  bottom:-150px;
+  filter:blur(10px);
+  opacity:0;
+  transition:.5s bottom,1.55s filter,1s opacity;
+}
+
+.tag-new{
+  background:#fff;
+  padding:5px;
+  border-radius:15px;
+  position:absolute;
+  z-index:2;
+  top:10px;
+  left:10px;
+  font-size:11px;
+  animation: pulse-animation 5s ease-in-out infinite;  
+}
+
+.price{
+  display:flex;
+  flex:row;
+  padding:10px;
+  gap:5px;
+  font-family:var(--secondary-font);
+}
+.price span:nth-child(1){
+   font-size:17px;
+   opacity:0.8;
+   text-decoration:line-through; 
+   transform:rotate(-15deg);
+}
+.price span:nth-child(2){
+   font-size:22px;
+   transform:rotate(-5deg);
+  font-size:600;
+}
+@keyframes pulse-animation{
+  0%,100%{
+    opacity:0.3;
+  }
+  50%{
+    opacity:1;
+  }
+}
+
+.card:hover .heading{
+  background-image:linear-gradient(180deg,black ,transparent 110%);
+  color:transparent;
+  background-clip:text;
+  position:absolute;
+  bottom:60%;
+  left:0%;
+  font-size:35px;
+  z-index:1;
+}
+
+.card:hover .main-image{
+  scale:1;
+  opacity:1;
+  transform:rotate(-35deg);
+}
+
+.card:hover .content{
+  opacity:1;
+  bottom:0px;
+  filter:blur(0);
+  
+}
+
+.card:hover{
+  
+  box-shadow:0px 0px 20px -10px gray;
+  opacity:1;
+}
+
+.card:hover svg{
+  filter:grayscale(0);
+}
+
+.card:hover .cover-image{
+  filter: blur(2px);
+}
